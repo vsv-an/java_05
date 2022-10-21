@@ -5,7 +5,7 @@ public class OddIndices {
     // Test Data:
     // Input = {-45, 590, 234, 985, 12, 68}
     // Expected Result =  {590, 985, 68}
-    public static int[] oddIndices(int[] array) {
+    public int[] oddIndices(int[] array) {
         int oddInd = 0;
         for (int i = 0; i < array.length; i++) {
             if (i % 2 != 0) {
