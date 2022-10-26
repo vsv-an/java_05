@@ -43,9 +43,8 @@ public class CreateArray {
         //converting using String.split() method with whitespace as a delimiter
         array = text.split(" ");
         //return the converted string array
-        for (int i = 0; i < array.length; i++) {
-            array[i] = array[i];
-        }
+//        for (int i = 0; i < array.length; i++) {
+//        }
 
         return array;
     }

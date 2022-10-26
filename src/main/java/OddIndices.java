@@ -6,23 +6,27 @@ public class OddIndices {
     // Input = {-45, 590, 234, 985, 12, 68}
     // Expected Result =  {590, 985, 68}
     public int[] oddIndices(int[] array) {
-        int oddInd = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (i % 2 != 0) {
-                oddInd++;
+        if (array != null && array.length > 0) {
+            int oddInd = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (i % 2 != 0) {
+                    oddInd++;
+                }
             }
-        }
-        int[] arrayOdd = new int[oddInd];
-        int odd = 0;
-        for (int i = 0; i < array.length & odd < oddInd; i++) {
-            if (i % 2 == 0) {
-                continue;
-            } else {
-                arrayOdd[odd] = array[i];
+            int[] arrayOdd = new int[oddInd];
+            int odd = 0;
+            for (int i = 0; i < array.length & odd < oddInd; i++) {
+                if (i % 2 == 0) {
+                    continue;
+                } else {
+                    arrayOdd[odd] = array[i];
+                }
+                odd++;
             }
-            odd++;
+
+            return arrayOdd;
         }
 
-        return arrayOdd;
+        return new int[0];
     }
 }

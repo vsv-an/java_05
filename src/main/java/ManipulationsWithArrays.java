@@ -33,7 +33,7 @@ public class ManipulationsWithArrays {
     public int[] toIntArray(double[] array) {
         int[] array1 = new int[array.length];
         for (int i = 0; i < array.length; i++) {
-            array1[i] = (int)array[i];
+            array1[i] = (int) array[i];
         }
 
         return array1;
@@ -71,12 +71,20 @@ public class ManipulationsWithArrays {
     // целых чисел и число number. Метод возвращает значение true,
     // если все элементы массива больше number, иначе возвращает false
     public boolean areValuesGreaterThanNumber(int[] array, int number) {
-        for (int i = 0; i < array.length; i++) {
-            if (number < array[i]) {
-                return true;
+        if (array != null && array.length != 0 && number != Integer.MAX_VALUE) {
+            if (number == Integer.MAX_VALUE + 1) {
+                number = Integer.MIN_VALUE;
             }
-            return false;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] <= number) {
+
+                    return false;
+                }
+            }
+
+            return true;
         }
+
         return false;
     }
 

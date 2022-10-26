@@ -1,6 +1,8 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import javax.accessibility.AccessibleEditableText;
+
 public class ManipulationsWithArraysTest {
 
     //Part 1.1 Arrays
@@ -120,12 +122,16 @@ public class ManipulationsWithArraysTest {
     // если все элементы массива больше number, иначе возвращает false
 
     //1. Positive testing Happy path
+    // Positive test
+    // array != null && array.length != 0 && number != Integer.MAX_VALUE
+    // return true
+
     @Test
-    public void areValuesGreaterThanNumber() {
+    public void testValidArrayValidNumber_HappyPath() {
         //AAA
         //Arrange
-        int[] array = {2, 2, 3, 4, 5};
-        int number = 1;
+        int[] array = {6, 7, 8, 9, 10};
+        int number = 5;
 
         boolean expectedResult = true;
 
@@ -135,13 +141,118 @@ public class ManipulationsWithArraysTest {
         //Assert
         Assert.assertEquals(actualResult, expectedResult);
     }
+
     //2. Positive testing Happy path
+    // array [i] <= number
+    // return false
     @Test
-    public void areValuesLessThanNumber() {
+    public void testValidArrayContainedValidNumber_HappyPath() {
         //AAA
         //Arrange
-        int[] array = {2, 2, 3, 4, 5};
+        int[] array = {6, 7, 8, 9, 3};
         int number = 3;
+
+        boolean expectedResult = false;
+
+        //Act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    //2. Positive testing Happy path
+    // array [i] <= number
+    // return false
+    @Test
+    public void testValidArrayLessThanValidNumber_HappyPath() {
+        //AAA
+        //Arrange
+        int[] array = {6, 7, 8, 9, 3};
+        int number = 11;
+
+        boolean expectedResult = false;
+
+        //Act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testArrayIsValidNumberIsMaxValuePlusOne_HappyPass() {
+        //AAA
+        //Arrange
+        int[] array = {6, 7, 8, 9, 3};
+        int number = Integer.MAX_VALUE + 1;
+
+        boolean expectedResult = true;
+
+        //Act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    // Negative test
+    // array == null && array.length == 0 && number == Integer.MAX_VALUE
+    // return false;
+    @Test
+    public void testArrayIsNullNumberIsValid_NegativeTest() {
+        //AAA
+        //Arrange
+        int[] array = null;
+        int number = 11;
+
+        boolean expectedResult = false;
+
+        //Act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testArrayIsEmptyNumberIsValid_NegativeTest() {
+        //AAA
+        //Arrange
+        int[] array = {};
+        int number = 11;
+
+        boolean expectedResult = false;
+
+        //Act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testArrayIsValidNumberIsMaxValue_NegativeTest() {
+        //AAA
+        //Arrange
+        int[] array = {6, 7, 8, 9, 3};
+        int number = Integer.MAX_VALUE;
+
+        boolean expectedResult = false;
+
+        //Act
+        boolean actualResult = new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test
+    public void testArrayIsValidNumberIsMinValueMinusOne_NegativeTest() {
+        //AAA
+        //Arrange
+        int[] array = {6, 7, 8, 9, 3};
+        int number = Integer.MIN_VALUE - 1;
 
         boolean expectedResult = false;
 

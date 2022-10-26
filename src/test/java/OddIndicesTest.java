@@ -25,9 +25,36 @@ public class OddIndicesTest {
 
         //Assert
         Assert.assertEquals(actualResult, expectedResult);
-
-
     }
 
+    // Negative test
+    @Test
+    public void testArrayOddIndicesArrayIsNull() {
+        //AAA
+        //Arrange
+        int[] array = null;
+
+        int[] expectedResult = {};
+
+        //Act
+        int[] actualResult = new OddIndices().oddIndices(array);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+    @Test
+    public void testArrayOddIndicesArrayIsEmpty() {
+        //AAA
+        //Arrange
+        int[] array = {};
+
+        int[] expectedResult = {};
+
+        //Act
+        int[] actualResult = new OddIndices().oddIndices(array);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
 
 }
