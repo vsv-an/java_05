@@ -540,6 +540,22 @@ public class StringMethodsTest {
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+    //Positive Test
+    @Test
+    public void testOtherFirstLastLetterIndexOf() {
+        //AAA
+        //Arrange
+        String str = "Whippersnapper";
+
+        boolean expectedResult = false;
+
+        //Act
+        boolean actualResult = new StringMethods().SameFirstLastLetterIndexOf(str);
+
+        //Assert
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
     // 12. Напишите метод, который принимает на вход строку из двух слов,
     // разделенных пробелом, и возвращает последнее слово
     // Test Data:

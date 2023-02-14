@@ -158,14 +158,14 @@ public class StringMethods {
     // "Наполеон Бонапарт писал: "В моем словаре нет слова "невозможно".""
     public String insertQuotas(String str1, String str2) {
 
-        return str1.concat(": " + "\""+ str2 + "\"");
+        return str1.concat(": " + "\"" + str2 + "\"");
     }
 
     public String insertQuotasNapoleon(String str1, String str2) {
         str2 = str2.replace("«", "\"");
         str2 = str2.replace("»", "\"");
 
-        return str1.concat(": " + "\""+ str2 + "\"");
+        return str1.concat(": " + "\"" + str2 + "\"");
     }
 
     // 9. Напишите метод, кторый принимает на вход
@@ -198,13 +198,26 @@ public class StringMethods {
     //    “Whippersnapper” → false
     public boolean SameFirstLastLetter(String str) {
         if ((str.toLowerCase().substring(0, 1)).
-                equals(str.substring(str.length() - 1))) {
+                equals(str.toLowerCase().substring(str.length() - 1))) {
 
             return true;
         }
 
         return false;
     }
+
+    public boolean SameFirstLastLetterIndexOf(String str) {
+        if (str != null && !str.trim().isEmpty() && !str.trim().contains(" ")) {
+            str = str.trim().toLowerCase();
+            if (str.lastIndexOf(str.charAt(0)) == (str.length() - 1)) {
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 
     // 12. Напишите метод, который принимает на вход строку из двух слов,
     // разделенных пробелом, и возвращает последнее слово
@@ -247,7 +260,7 @@ public class StringMethods {
         String[] arr = str.split(" ");
         return "Имя: " + arr[0] + "\n"
                 + "Отчество: " + arr[1] + "\n"
-                + "Фамилия: "  + arr[2];
+                + "Фамилия: " + arr[2];
     }
 
 
