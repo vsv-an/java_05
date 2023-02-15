@@ -15,7 +15,7 @@ public class OddIndices {
             }
             int[] arrayOdd = new int[oddInd];
             int odd = 0;
-            for (int i = 0; i < array.length & odd < oddInd; i++) {
+            for (int i = 0; i < array.length && odd < oddInd; i++) {
                 if (i % 2 == 0) {
                     continue;
                 } else {
