@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class SumArray_1Test {
+public class SumArrayNewTest {
 
     @Test
     public void sumArray1() {

@@ -39,4 +39,39 @@ class ManipulationsWithArraysNewTest {
 
         assertArrayEquals(expectedResult, new ManipulationsWithArrays().toStringArray(array));
     }
+    @Test
+    public void areValuesGreaterThanNumberValidArrayValidNumber() {
+        int[] array = {6, 7, 8, 9, 10};
+        int number = 5;
+
+        assertEquals(true, new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number));
+    }
+    @Test
+    public void areValuesGreaterThanNumberValidArrayValidNumberEqualArraysNumber() {
+        int[] array = {6, 7, 8, 9, 10};
+        int number = 6;
+
+        assertEquals(false, new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number));
+    }
+    @Test
+    public void areValuesGreaterThanNumberValidArrayValidNumberLessThemArraysNumber() {
+        int[] array = {6, 7, 8, 9, 10};
+        int number = 11;
+
+        assertEquals(false, new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number));
+    }
+    @Test
+    public void areValuesGreaterThanNumberValidArrayValidNumberIsMaxValuePlusOne() {
+        int[] array = {6, 7, 8, 9, 10};
+        int number = Integer.MAX_VALUE + 1;
+
+        assertEquals(true, new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number));
+    }
+    @Test
+    public void areValuesGreaterThanNumberWhereArrayIsNull() {
+        int[] array = null;
+        int number = 5;
+
+        assertEquals(false, new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number));
+    }
 }
