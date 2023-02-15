@@ -14,10 +14,13 @@ public class AreNumbersEqual {
     // Expected result: 1
     public int areNumbersEqual(int x, int y) {
         if (x == y) {
+
             return 0;
         } else if (x < y) {
+
             return -1;
         }
+
         return 1;
     }
 
