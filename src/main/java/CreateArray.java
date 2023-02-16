@@ -1,5 +1,7 @@
+import java.util.Arrays;
 public class CreateArray {
     // Part 1.1 Arrays
+    //
     // Методы и тесты из заданий 1-4 писать в классах -
     // CreateArray и CreateArrayTest.
     // В голубой папке java создать класс CreateArray, написать в этом классе
@@ -47,6 +49,24 @@ public class CreateArray {
         return array;
     }
 
+    // Part 2.1 Arrays
+    //
+    //
+    // 1. В классе CreateArray написать метод createIntArrayFromText(),
+    // который принимает на вход строку чисел (н-р, “3 4 1 8 10 12.3”)
+    // и возвращает массив типа int[] из этих чисел.
 
+    public int[] createIntArrayFromText(String str) {
+        if (str.length() > 0) {
+            String[] strArray = str.split(" ");
+            int[] array = new int[strArray.length];
+            for (int i = 0; i < array.length; i++) {
+                array[i] = (int)Double.parseDouble(strArray[i]);
+            }
 
+            return array;
+        }
+
+        return new int[0];
+    }
 }

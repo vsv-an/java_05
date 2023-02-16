@@ -49,4 +49,26 @@ class CreateArrayNewTest {
 
         assertArrayEquals(expectedResult, new CreateArray().createArrayFromText(str));
     }
+
+    // Part 2.1 Arrays
+    //
+    //
+    // 1. В классе CreateArray написать метод createIntArrayFromText(),
+    // который принимает на вход строку чисел (н-р, “3 4 1 8 10 12.3”)
+    // и возвращает массив типа int[] из этих чисел.
+
+    @Test
+    public void createIntArrayFromText() {
+        String str = "3 4 1 8 10 12.3";
+        int[] expectedResult = new int[] {3, 4, 1, 8, 10, 12};
+
+        assertArrayEquals(expectedResult, new CreateArray().createIntArrayFromText(str));
+    }
+    @Test
+    public void createIntArrayFromTextZeroLength() {
+        String str = "";
+        int[] expectedResult = new int[0];
+
+        assertArrayEquals(expectedResult, new CreateArray().createIntArrayFromText(str));
+    }
 }
