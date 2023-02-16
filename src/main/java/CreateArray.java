@@ -69,4 +69,23 @@ public class CreateArray {
 
         return new int[0];
     }
+
+    // Part 2.1 Arrays
+    // В классе CreateArray написать метод multiplesOf(), который принимает на вход
+    // целое положительные число number в пределах от 1 включительно до 10 включительно,
+    // и возвращает таблицу умножения на это число в виде массива
+    // Например, multiplesOf(2) -> {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+
+    public int[] multiplesOf(int number) {
+        int[] array = new int[11];
+        if (number >= 1 && number <= 10) {
+            for (int i = 0; i < array.length; i++) {
+                array[i] = number * i;
+            }
+
+            return array;
+        }
+
+        return new int[0];
+    }
 }

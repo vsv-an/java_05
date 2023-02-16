@@ -71,4 +71,17 @@ class CreateArrayNewTest {
 
         assertArrayEquals(expectedResult, new CreateArray().createIntArrayFromText(str));
     }
+
+    // Part 2.1 Arrays
+    // В классе CreateArray написать метод multiplesOf(), который принимает на вход
+    // целое положительные число number в пределах от 1 включительно до 10 включительно,
+    // и возвращает таблицу умножения на это число в виде массива
+    // Например, multiplesOf(2) -> {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+    @Test
+    public void multiplesOf() {
+        int number = 2;
+        int[] expectedResult = new int[]{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+
+        assertArrayEquals(expectedResult, new CreateArray().multiplesOf(number));
+    }
 }
