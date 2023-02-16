@@ -74,4 +74,17 @@ class ManipulationsWithArraysNewTest {
 
         assertEquals(false, new ManipulationsWithArrays().areValuesGreaterThanNumber(array, number));
     }
+
+    // Part 2.1 Arrays
+    // 4. В классе ManipulationsWithArrays написать метод getTheGreaterHalf(),
+    // который принимает массив целых чисел,  и возвращает  массив из суммарно
+    // бОльшей первой или второй половины входящего массива
+
+    @Test
+    public void getTheGrearHalfHappyPath() {
+        int[] array = {6, 7, 8, 9, 10, 11};
+        int[] expectedResult = {9, 10, 11};
+
+        assertArrayEquals(expectedResult, new ManipulationsWithArrays().getTheGreaterHalf(array));
+    }
 }

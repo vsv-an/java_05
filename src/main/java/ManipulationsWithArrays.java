@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ManipulationsWithArrays {
 
     //Part 1.1 Arrays
@@ -88,4 +90,32 @@ public class ManipulationsWithArrays {
         return false;
     }
 
+    // Part 2.1 Arrays
+    // 4. В классе ManipulationsWithArrays написать метод getTheGreaterHalf(),
+    // который принимает массив целых чисел,  и возвращает  массив из суммарно
+    // бОльшей первой или второй половины входящего массива
+
+    public int[] getTheGreaterHalf(int[] array) {
+        int[] arr = new int[array.length / 2];
+        int[] arr2 = new int[array.length / 2];
+        int sum = 0;
+        int sum2 = 0;
+        for (int i = 0; i < array.length / 2; i++) {
+            sum += array[i];
+            arr[i] = array[i];
+        }
+
+        for (int i = array.length /2, j = 0; i < array.length; i++) {
+            sum2 += array[i];
+            arr2[j] = array[i];
+            j++;
+        }
+
+        if (sum > sum2) {
+
+            return arr;
+        }
+
+        return arr2;
+    }
 }
