@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 /*
 Part 2 Algorithms
@@ -15,7 +14,6 @@ public class ReverseArray {
                 array[array.length - 1 - i] = temp;
             }
 
-            System.out.println(Arrays.toString(array));
             return array;
         }
 
