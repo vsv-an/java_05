@@ -1,4 +1,4 @@
-public class SpiralPatternExemple1 {
+public class SpiralPatternExample1 {
     //defining method to print the spiral pattern or matrix
     static void printSpiralPattern(int size) {
         //create two variables row and col to traverse rows and columns
