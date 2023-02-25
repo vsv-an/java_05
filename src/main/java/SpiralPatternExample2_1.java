@@ -12,6 +12,7 @@ public class SpiralPatternExample2_1 {
         return box;
     }
 
+
     public static void main(String[] args) {
         int with = 8;
         int length = 8;
