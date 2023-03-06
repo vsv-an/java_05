@@ -16,6 +16,7 @@ public class SpiralPatternExample2_1 {
         int with = 8;
         int length = 8;
 
+
         createBox(with, length);
     }
 }
