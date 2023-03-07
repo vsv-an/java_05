@@ -11,64 +11,63 @@ public class NearSquareNumber {
 //    само число 25.
 
     public static void main(String[] args) {
-//        int number = 21;
-//        int number2 = number;
-//        int result1 = 0;
-//        int result2 = 0;
-//
-//        for (int k = number; k > 0; k--) {
-//            int result = 0;
-//            for(int i = 1, j = 1; i <= number; i++, j++) {
-//                if (i * j == number) {
-//                    result = i;
-//                    break;
-//                }
-//            }
-//            if (result > 0) {
-//                result1 = number;
-//            } else {
-//                number--;
-//            }
-//        }
-//
-//        for (int k = number2; k <= number2 * 2; k++) {
-//            int result = 0;
-//            for(int i = 1, j = 1; i <= number2; i++, j++) {
-//            if (i * j == number2) {
-//                result = i;
-//                break;
-//            }
-//        }
-//            if (result > 0) {
-//                result2 = number2;
-//            } else {
-//                number2++;
-//            }
-//        }
-//
-//        System.out.println(result1);
-//        System.out.println(result2);
-
-
         int number = 21;
         int result1 = 0;
         int result2 = 0;
-        for(int i = number; i > 0; i--) {
-            if (Math.sqrt(i) % 1 == 0) {
-                result1 = i;
+
+        for (int k = number; k > 0; k--) {
+            int result = 0;
+            for(int i = 1, j = 1; i <= number; i++, j++) {
+                if (i * j == k) {
+                    result = i;
+                    break;
+                }
+            }
+            if (result > 0) {
+                result1 = k;
                 break;
             }
         }
-        for(int i = number; i < number * 2; i++) {
-            if (Math.sqrt(i) % 1 == 0) {
-                result2 = i;
+
+        for (int k = number; k <= number * 2; k++) {
+            int result = 0;
+            for(int i = 1, j = 1; i <= number; i++, j++) {
+            if (i * j == k) {
+                result = i;
                 break;
             }
         }
-        if (Math.abs(number - result1) < Math.abs(number - result2)) {
+            if (result > 0) {
+                result2 = k;
+                break;
+            }
+        }
+
+        if (number - result1 < result2 - number) {
             System.out.println(result1);
         } else {
             System.out.println(result2);
         }
+
+//        int number = 21;
+//        int result1 = 0;
+//        int result2 = 0;
+//        for(int i = number; i > 0; i--) {
+//            if (Math.sqrt(i) % 1 == 0) {
+//                result1 = i;
+//                break;
+//            }
+//        }
+//        for(int i = number; i < number * 2; i++) {
+//            if (Math.sqrt(i) % 1 == 0) {
+//                result2 = i;
+//                break;
+//            }
+//        }
+//        if (Math.abs(number - result1) < Math.abs(number - result2)) {
+//            System.out.println(result1);
+//        } else {
+//            System.out.println(result2);
+//        }
     }
 }
