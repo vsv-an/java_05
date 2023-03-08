@@ -15,30 +15,30 @@ public class NearSquareNumber {
         int result1 = 0;
         int result2 = 0;
 
-        for (int k = number; k > 0; k--) {
+        for (int i = number; i > 0; i--) {
             int result = 0;
-            for(int i = 1, j = 1; i <= number; i++, j++) {
-                if (i * j == k) {
-                    result = i;
+            for(int j = 1; j <= number; j++) {
+                if (j * j == i) {
+                    result = j;
                     break;
                 }
             }
             if (result > 0) {
-                result1 = k;
+                result1 = i;
                 break;
             }
         }
 
-        for (int k = number; k <= number * 2; k++) {
+        for (int i = number; i <= number * 2; i++) {
             int result = 0;
-            for(int i = 1, j = 1; i <= number; i++, j++) {
-            if (i * j == k) {
-                result = i;
+            for(int j = 1; j <= number; j++) {
+            if (j * j == i) {
+                result = j;
                 break;
             }
         }
             if (result > 0) {
-                result2 = k;
+                result2 = i;
                 break;
             }
         }
